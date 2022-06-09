@@ -15,10 +15,10 @@ x_test = tf.keras.utils.normalize(x_test, axis = 1)
 
 #basic neural network
 model = tf.keras.models.Sequential()
-model.add(tf.keras.layers.Flatten(input_shape=(28,28,1))) #zamienia "tablice" w jeden "pasek" danych
+model.add(tf.keras.layers.Flatten(input_shape=(28,28,1)))
 model.add(tf.keras.layers.Dense(units=128, activation = tf.nn.relu))
 model.add(tf.keras.layers.Dense(units=128, activation = tf.nn.relu))
-model.add(tf.keras.layers.Dense(units=10, activation = tf.nn.sigmoid)) #output
+model.add(tf.keras.layers.Dense(units=10, activation = tf.nn.sigmoid))
 
 model.compile(optimizers.Adam(), loss = 'sparse_categorical_crossentropy', metrics=['accuracy'])
 model.fit(x_train, y_train, epochs=3)
