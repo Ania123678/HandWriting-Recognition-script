@@ -31,7 +31,7 @@ for x in range(1,4):
     img = cv2.imread(f'{x}.png')[:,:,0]
     img = np.invert(np.array([img]))
     prediction = model.predict(img)
-    print(f'to jest prawdopodobnie:', np.argmax(prediction))
+    print(f'it looks like:', np.argmax(prediction))
     plt.imshow(img[0], cmap=plt.cm.binary)
     plt.show()
 
